@@ -140,9 +140,15 @@ The following command creates the initial build container:
 
     $ cqfd init
 
-``cqfd`` will use the provided Dockerfile (which must be located in the
+``cqfd`` will use the provided Dockerfile (which by default must be located in the
 .cqfd/docker/ directory of your project) to create a normalized runtime
 build environment for your project.
+
+To set a custom path for the Dockerfile, add an entry 'dockerfile' in the build section:
+
+	[build]
+	dockerfile='new_docker_repo/Dockerfile'
+	command='make foobar_defconfig && make && asciidoc README.FOOINC'
 
 Using the build container
 -------------------------
